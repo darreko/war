@@ -1,21 +1,25 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:war/constants.dart';
 
 class CardBack extends StatelessWidget {
   final double size;
+  final Widget? child;
 
-  const CardBack({super.key, this.size = 1});
+  const CardBack({super.key, this.size = 1, this.child});
 
   @override
   Widget build(BuildContext context) {
     return Container(
         width: CARD_WIDTH * size,
         height: CARD_HEIGHT * size,
-        // color: Colors.blue,
-        child: CachedNetworkImage(
-            imageUrl: 'https://deckofcardsapi.com/static/img/back.png',
-            width: CARD_WIDTH * size,
-            height: CARD_WIDTH * size));
+        decoration: BoxDecoration(
+          color: Colors.blueGrey,
+          borderRadius: BorderRadius.circular(4),
+        ),
+        child: child ?? Container());
+    // CachedNetworkImage(
+    //     imageUrl: 'https://deckofcardsapi.com/static/img/back.png',
+    //     width: CARD_WIDTH * size,
+    //     height: CARD_WIDTH * size));
   }
 }
