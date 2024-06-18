@@ -42,7 +42,7 @@ class _GameScreenState extends State<GameScreen> {
         title: const Text("War"),
         actions: [TextButton(onPressed: () {}, child: const Text("New Game"))],
       ),
-      body: GameBoard(),
+      body: const GameBoard(),
     );
   }
 }
